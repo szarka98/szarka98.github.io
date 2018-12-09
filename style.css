@@ -1,0 +1,28 @@
+body {
+    background: #212424;
+    color: #e1e1e1;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.8;
+}
+
+a, a:active, a:focus, a:link, a:visited {
+    color: #41c7c7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+span {
+    display: block;
+    font-weight: 600;
+    text-align: right;
+}
+
+.main {
+    padding: 20px 20px 80px;
+}
+
+.mendyeleyev-frame {
+    stroke-width: 1px;
+    stroke: #646a6a;
+    fill: #212424;
+}
