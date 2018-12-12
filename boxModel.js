@@ -1,3 +1,14 @@
+// --- test jQuery animation with a callback ---
+$("#start").click(function(){
+    $("#opera").animate({
+        opacity: 0.5,
+        height:"25px",
+    } , 2000, function() {
+        alert("opera");
+    });
+});
+// ----------------------------------------------
+
 var minCord = [0, 0];
 var maxCord = [500, 1000];
 var dCord = [200, 200];
@@ -36,5 +47,6 @@ function nextCoord() {
     document.getElementById("n1").animate(
         move1,
         move1Timing
-    )
+    );
+
     

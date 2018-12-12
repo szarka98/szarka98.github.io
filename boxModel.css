@@ -5,6 +5,15 @@ body {
     line-height: 1.8;
 }
 
+#opera {
+    margin-left:10px;
+	margin-bottom:10px;
+	background-color:red;
+	opacity:1;
+	float:left;
+	width:100px;
+	height:1px;
+}
 .sandbox {
     background: red;
     height: 300px;
