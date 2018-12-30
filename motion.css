@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background: #e1e1e1;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+canvas {
+    background: #212424;
+    display: block;
+}
