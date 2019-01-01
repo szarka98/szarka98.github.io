@@ -1,10 +1,27 @@
 body {
-    margin: 0;
-    background: #e1e1e1;
+    background: #212424;
     font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
 }
 
 canvas {
-    background: #212424;
     display: block;
+}
+
+#start-button {
+    border: 1px solid #646a6a;
+    bottom: 20%;
+    color: #c4caca;
+    font-size: 2rem;
+    font-weight: 600;
+    /* TODO: position horizontally to center */ 
+    left: 40%;
+    padding: 1.7rem 7rem;
+    position: absolute;
+}
+
+#start-button:hover {
+    color: #fe6a6a;
+    border-color: #fe6a6a;
+    text-decoration: none;
 }
