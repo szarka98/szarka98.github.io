@@ -22,17 +22,10 @@ for (var i = 0; i < 5; i++) {
 }
 
 var speed = 8;
-var elemName = ["Ja", "Va", "Sc", "Ri", "Pt"];
-var elemName_ = ["St", "At", "E", " ", "Of"];
-var elemNumColor = "#c4caca";
-var elemNumColor_ = "#e1e1e1";
-var elemNameColor = "#41c7c7";
-var elemNameColor_ = "#e1e1e1";
-
-var elemNum = [4, 5, 6, 7, 8];
-var elemNum_ = [0, 1, 2, 0, 3];
-var elemBoole = [1, 1, 1, 1, 1];
-var elemBoole_ = [1, 1, 1, 0, 1];
+var elemName = [["St", "At", "E", " ", "Of"], ["Ja", "Va", "Sc", "Ri", "Pt"]];
+var elemNameColor = ["#e1e1e1", "#41c7c7"];
+var elemNum = [[0, 1, 2, 0, 3], [4, 5, 6, 7, 8]];
+var elemBoole = [[1, 1, 1, 0, 1], [1, 1, 1, 1, 1]];
 
 var startBtn = document.getElementById("start-button");
 var magnet = false;
@@ -51,7 +44,7 @@ function magnetOff() {
 
 function drawElem(i) {
   // box
-  if (elemBoole[i]) {
+  if (elemBoole[1][i]) {
     ctx.beginPath();
     ctx.rect(v[i][1][0], v[i][1][1], size, size);
     ctx.fillStyle = "#212424";
@@ -62,19 +55,19 @@ function drawElem(i) {
     // elem
     ctx.font = "600 2.4rem IBM Plex Mono";
     ctx.textAlign = "center";
-    ctx.fillStyle = elemNameColor;
-    ctx.fillText(elemName[i], v[i][1][0] + size / 2, v[i][1][1] + size * 0.6);
+    ctx.fillStyle = elemNameColor[1];
+    ctx.fillText(elemName[1][i], v[i][1][0] + size / 2, v[i][1][1] + size * 0.6);
     // number
     ctx.font = "300 13px IBM Plex Mono";
     ctx.fillStyle = "#e1e1e1";
     ctx.fillText(
-      elemNum[i],
+      elemNum[1][i],
       v[i][1][0] + size * 0.14,
       v[i][1][1] + size * 0.19
     );
     ctx.closePath();
   }
-  if (elemBoole_[i]) {
+  if (elemBoole[0][i]) {
     ctx.beginPath();
     ctx.rect(v[i][0][0], v[i][0][1], size, size);
     ctx.fillStyle = "#212424";
@@ -85,13 +78,13 @@ function drawElem(i) {
     // elem
     ctx.font = "600 2.4rem IBM Plex Mono";
     ctx.textAlign = "center";
-    ctx.fillStyle = elemNameColor_;
-    ctx.fillText(elemName_[i], v[i][0][0] + size / 2, v[i][0][1] + size * 0.6);
+    ctx.fillStyle = elemNameColor[0];
+    ctx.fillText(elemName[0][i], v[i][0][0] + size / 2, v[i][0][1] + size * 0.6);
     // number
     ctx.font = "300 13px IBM Plex Mono";
     ctx.fillStyle = "#e1e1e1";
     ctx.fillText(
-      elemNum_[i],
+      elemNum[0][i],
       v[i][0][0] + size * 0.14,
       v[i][0][1] + size * 0.19
     );
