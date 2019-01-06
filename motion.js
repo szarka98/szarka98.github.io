@@ -21,17 +21,13 @@ var elemNum = [[0, 1, 2, 0, 3], [4, 5, 6, 7, 8], [0, 0, 9, 10, 0]];
 // hide factor
 var elemBoole = [[1, 1, 1, 0, 1], [1, 1, 1, 1, 1], [0, 0, 1, 1, 0]];
 // starting point
-var v0 = [];
+var v0 = createArray(5, 3, 2);
 // current coordinates
-var v = [];
+var v = createArray(5, 3, 2);
 // speed vector
-var dv = [];
+var dv = createArray(5, 3, 2);
 
 for (var i = 0; i < 5; i++) {
-  // TODO: beautify multidim array declaration
-  v0[i] = [];
-  v[i] = [];
-  dv[i] = [];
   for (var j = 0; j < 3; j++) {
     v0[i][j] = [leftX + size * i, 100 * (1 + j)];
     v[i][j] = [v0[i][j][0], v0[i][j][1]];
@@ -43,6 +39,18 @@ var startBtn = document.getElementById("start-button");
 var magnet = false;
 startBtn.addEventListener("mouseover", magnetOn);
 startBtn.addEventListener("mouseout", magnetOff);
+
+// without this the 3dim-array is not initialized and return with error: undefined
+function createArray(length) {
+  var arr = new Array(length || 0),
+    i = length;
+
+  if (arguments.length > 1) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    while (i--) arr[i] = createArray.apply(this, args);
+  }
+  return arr;
+}
 
 function magnetOn() {
   magnet = true;
